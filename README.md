@@ -12,6 +12,7 @@ Este projeto foi desenvolvido durante a **Academia JAVA com GenAI da Accenture**
 * Integração com a API pública ViaCEP
 * Interface simples feita com Thymeleaf
 * Tratamento de erros para CEP inválido ou inexistente
+* Banco de dados
 
 ---
 
@@ -30,3 +31,4 @@ A aplicação está disponível no link:
 * Maven
 * API ViaCEP
 * Render (deploy)
+* Banco de dados (H2)
