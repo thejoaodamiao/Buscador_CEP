@@ -3,6 +3,9 @@ package acc.br.ConsumoCep.controller;
 
 import acc.br.ConsumoCep.model.Endereco;
 import acc.br.ConsumoCep.services.ViaCepService;
+import acc.br.ConsumoCep.repository.EnderecoRepository;
+
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,23 +17,23 @@ import org.springframework.web.bind.annotation.*;
 public class EnderecoController {
 
     private final ViaCepService service;
+    private final EnderecoRepository repository;
 
-    public EnderecoController(ViaCepService service) {
+    public EnderecoController(ViaCepService service, EnderecoRepository repository) {
         this.service = service;
+        this.repository = repository;
     }
 
     @GetMapping("/{cep}")
     public Endereco getCep(@PathVariable String cep) {
         return service.buscarESalvar(cep);
     }
-}
 
-@Controller
-@RequestMapping("/")
-class CepViewController {
-
-    @GetMapping
-    public String cepPage(Model model) {
-        return "cep"; // Renderiza templates/cep.html
+     @GetMapping
+    public List<Endereco> listarTodos() {
+        return repository.findAll();
     }
+
+
 }
+
