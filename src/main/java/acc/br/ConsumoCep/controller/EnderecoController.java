@@ -6,9 +6,6 @@ import acc.br.ConsumoCep.services.ViaCepService;
 import acc.br.ConsumoCep.repository.EnderecoRepository;
 
 import java.util.List;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
